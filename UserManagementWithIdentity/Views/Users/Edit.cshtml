@@ -1,0 +1,40 @@
+﻿@model UserProfileViewModel
+
+@{
+    ViewData["Title"] = "Add User";
+}
+
+<form method="post" asp-action="Edit">
+    <h2>Add New User</h2>
+    <hr />
+    <input type="hidden" asp-for="Id" />
+    <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+    <div class="form-floating mb-3">
+        <input asp-for=" FirstName" class="form-control" aria-required="true" placeholder="First Name" maxlength="100" />
+        <label asp-for=" FirstName">FirstName</label>
+        <span asp-validation-for=" FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-floating mb-3">
+        <input asp-for=" LastName" class="form-control" aria-required="true" placeholder="Last Name" maxlength="100" />
+        <label asp-for=" LastName">LastName</label>
+        <span asp-validation-for=" LastName" class="text-danger"></span>
+    </div>
+    <div class="form-floating mb-3">
+        <input asp-for=" UserName" class="form-control" aria-required="true" placeholder="UserName" maxlength="100" />
+        <label asp-for=" UserName">UserName</label>
+        <span asp-validation-for=" UserName" class="text-danger"></span>
+    </div>
+    <div class="form-floating mb-3">
+        <input asp-for=" Email" class="form-control"  aria-required="true" placeholder="name@example.com" />
+        <label asp-for=" Email">Email</label>
+        <span asp-validation-for="Email"></span>
+    </div>
+    
+ 
+
+    <button type="submit" class="d-block btn btn-success w-100" asp-action="Edit">Update</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
