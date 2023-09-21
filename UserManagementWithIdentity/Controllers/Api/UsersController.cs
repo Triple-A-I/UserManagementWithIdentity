@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using UserManagementWithIdentity.Models;
 
@@ -6,7 +7,7 @@ namespace UserManagementWithIdentity.Controllers.Api
 {
     [Route("api/{Controller}")]
     [ApiController]
-
+    [Authorize(Roles = "Admin")]
     public class UsersController : ControllerBase
     {
         private readonly UserManager<ApplicationUser> _userManager;
